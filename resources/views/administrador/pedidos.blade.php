@@ -82,13 +82,13 @@
                     </a>
                 </li>
                 <li>
-                    <a id="inbox" href="{{route('administrador.proveedores')}}">
+                    <a href="{{route('administrador.proveedores')}}">
                         <ion-icon name="bag-handle-outline"></ion-icon>
                         <span>Proveedores</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('administrador.pedidos')}}">
+                    <a id="inbox" href="{{route('administrador.pedidos')}}">
                         <ion-icon name="bag-add-outline"></ion-icon>
                         <span>Pedidos</span>
                     </a>

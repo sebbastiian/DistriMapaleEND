@@ -58,7 +58,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{-- {{route('administrador.pedidos')}} --}}">
+                    <a href="{{route('administrador.pedidos')}}">
                         <ion-icon name="bag-add-outline"></ion-icon>
                         <span>Pedidos</span>
                     </a>
@@ -70,7 +70,7 @@
                     </a>
                 </li>
                 <li>
-                    <a id="inbox" href="{{route('administrador.vehiculos')}}">
+                    <a  href="{{route('administrador.vehiculos')}}">
                         <ion-icon name="car-sport-outline"></ion-icon>
                         <span>Vehículos</span>
                     </a>

@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('administrador.facturas')}}">
+                    <a id="inbox" href="{{route('administrador.facturas')}}">
                         <ion-icon name="cash-outline"></ion-icon>
                         <span>Ventas</span>
                     </a>
