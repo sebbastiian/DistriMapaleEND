@@ -11,13 +11,13 @@ class FacturaController extends Controller
     public function index()
     {
         // Consulta para obtener las facturas del usuario autenticado
-        $facturas = \DB::table('detallesfactura')
-            ->join('facturas', 'detallesfactura.idfactura', '=', 'facturas.idfactura')
-            ->join('productos', 'detallesfactura.idproducto', '=', 'productos.idproducto')
+        $facturas = \DB::table('detalles_facturas')
+            ->join('facturas', 'detalles_facturas.idfactura', '=', 'facturas.idfactura')
+            ->join('productos', 'detalles_facturas.idproducto', '=', 'productos.idproducto')
             ->join('users as clientes', 'facturas.idcliente', '=', 'clientes.id')
             ->join('users as transportadores', 'facturas.idtrasnportador', '=', 'transportadores.id')
             ->select(
-                'detallesfactura.*',
+                'detalles_facturas.*',
                 'facturas.*',
                 'productos.*',
                 'clientes.*',

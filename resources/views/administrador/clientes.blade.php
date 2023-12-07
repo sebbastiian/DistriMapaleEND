@@ -46,15 +46,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{-- {{route('administrador.facturas')}} --}}">
+                    <a href="{{route('administrador.facturas')}}">
                         <ion-icon name="cash-outline"></ion-icon>
                         <span>Ventas</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{-- {{route('administrador.contabilidad')}} --}}">
-                        <ion-icon name="bar-chart-outline"></ion-icon>
-                        <span>Contabilidad</span>
                     </a>
                 </li>
                 <li>
@@ -64,7 +58,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{-- {{route('administrador.pedidos')}} --}}">
+                    <a href="{{route('administrador.pedidos')}}">
                         <ion-icon name="bag-add-outline"></ion-icon>
                         <span>Pedidos</span>
                     </a>

@@ -13,6 +13,31 @@
     
 </head>
 
+<style>
+    /* Agrega estos estilos en tu archivo de estilos CSS */
+.card {
+    width: 80%; /* Puedes ajustar el porcentaje según tus preferencias */
+    margin: 0 auto; /* Centra la tarjeta horizontalmente */
+    border: 1px solid #ddd; /* Añade un borde para mejorar la apariencia */
+    border-radius: 8px; /* Añade bordes redondeados */
+    padding: 15px; /* Añade un espacio interno */
+    margin-bottom: 20px; /* Espaciado inferior entre tarjetas */
+}
+
+.card-header {
+    background-color: #f2f2f2; /* Agrega un color de fondo para el encabezado */
+    padding: 10px; /* Ajusta el espacio interno del encabezado */
+    border-bottom: 1px solid #ddd; /* Línea separadora entre el encabezado y el cuerpo */
+}
+
+.card-body {
+    margin-top: 10px; /* Ajusta el espacio superior del cuerpo */
+}
+
+/* Agrega más estilos según tus preferencias */
+
+</style>
+
 <body>
     <div class="menu">
         <ion-icon name="menu-outline"></ion-icon>
@@ -51,25 +76,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{-- {{route('administrador.facturas')}} --}}">
+                    <a href="{{route('administrador.facturas')}}">
                         <ion-icon name="cash-outline"></ion-icon>
                         <span>Ventas</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{-- {{route('administrador.contabilidad')}} --}}">
-                        <ion-icon name="bar-chart-outline"></ion-icon>
-                        <span>Contabilidad</span>
-                    </a>
-                </li>
-                <li>
-                    <a id="inbox" href="{{route('administrador.proveedores')}}">
+                    <a href="{{route('administrador.proveedores')}}">
                         <ion-icon name="bag-handle-outline"></ion-icon>
                         <span>Proveedores</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('administrador.pedidos')}}">
+                    <a id="inbox" href="{{route('administrador.pedidos')}}">
                         <ion-icon name="bag-add-outline"></ion-icon>
                         <span>Pedidos</span>
                     </a>
@@ -135,47 +154,63 @@
     <main>
         <div class="navegacion-admin">
             <div class="tittlee">
-                <h2>Pedidos</h2>
+                <h2>Lista de Pedidos</h2>
                 <div class="search-bar">
                     <input class="inputsrch" type="text" id="searchInput" placeholder="Buscar pedidos...">
-                    <button class="search-botn" onclick="buscarProveedores()">Buscar</button>
+                    <button class="search-botn" onclick="buscarPedidos()">Buscar</button>
                 </div>
             </div>
         </div>
-    
         <div class="color">
-            <div class="titabl">
-                <h2>Tus Pedidos</h2>
-    
-                <div class="caja-crear">
-                    <a href="{{route('pedidos.create')}}">
-                        <button class="boton">
-                            <ion-icon name="add-outline"></ion-icon>
-                            <span>Crear nuevo</span>
-                        </button>
-                    </a>
-                </div>
+            <div class="titabl tabla-pedidos">
+                <h1 style="margin-bottom: 7%">Listado de Pedidos</h1>
             </div>
-            <div class="tabla-tipos">
-                <div class="card-container">
-                   {{--  @foreach ($proveedores as $proveedor)
+            <div class="containerr">
+                <div>
+                    @foreach ($pedidos as $pedido)
                         <div class="card">
+                            <div class="card-header">
+                                Pedido #{{ $pedido->idpedido }}
+                            </div>
                             <div class="card-body">
-                                <h3>{{ $proveedor->nombre }}</h3>
-                                <h6>{{ $proveedor->email }}</h6>
-                                <h6>{{ $proveedor->telefono }}</h6>
-                                <div class="botonc">
-                                    <a class="botoned" href="{{ route('administrador.proveedor.edit', $proveedor->idproveedor) }}">
-                                        Editar
-                                    </a>
+                                <p>Fecha y Hora: {{ $pedido->fechahora }}</p>
+                                <p>Plazo de Entrega: {{ $pedido->plazoentrega }}</p>
+    
+                                <h5>Detalles del Producto:</h5>
+                                <div>
+                                    <h6>ID Detalle Pedido: {{ $pedido->iddetallepedido }}</h6>
+                                    <h6>Nombre del Producto: {{ $pedido->descripcion }}</h6>
+                                    <h6>Cantidad Solicitada: {{ $pedido->cantidadsolicitada }}</h6>
+                                    <!-- Agrega más detalles del producto según sea necesario -->
                                 </div>
+    
+                                <h5>Detalles del Proveedor:</h5>
+                                <div>
+                                    <h6>ID Proveedor: {{ $pedido->idproveedor }}</h6>
+                                    <h6>Nombre: {{ $pedido->name }}</h6>
+                                    <h6>Correo Electrónico: {{ $pedido->email }}</h6>
+                                    <!-- Agrega más detalles del proveedor según sea necesario -->
+                                </div>
+    
+                                <h5>Detalles del Administrador:</h5>
+                                <div>
+                                    <h6>ID Administrador: {{ $pedido->idadministrador }}</h6>
+                                    <h6>Nombre: {{ $pedido->name }} {{ $pedido->apellido }}</h6>
+                                    <h6>Correo Electrónico: {{ $pedido->email }}</h6>
+                                    <!-- Agrega más detalles del administrador según sea necesario -->
+                                </div>
+    
+                                <!-- Puedes agregar más secciones con detalles adicionales -->
+    
                             </div>
                         </div>
-                    @endforeach --}}
+                        <br>
+                    @endforeach
                 </div>
             </div>
         </div>
     </main>
+    
     
     <script>
         function buscarProveedores() {
