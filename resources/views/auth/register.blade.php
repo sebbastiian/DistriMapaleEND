@@ -1,8 +1,9 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <img src="/img/logomd.png" alt="Logo" style="max-width: 100px" class="logo">
         </x-slot>
+
 
         <x-validation-errors class="mb-4" />
 
@@ -68,9 +69,6 @@
                 <x-label for="roles_id" value="{{ __('Role') }}" />
                 <select id="roles_id" name="roles_id" class="block mt-1 w-full">
                     <option value="2" {{ old('roles_id', 2) == 2 ? 'selected' : '' }}>Cliente</option>
-                    
-                    <option value="1" {{ old('roles_id', 2) == 1 ? 'selected' : '' }}>Administrador</option>
-                    <option value="3" {{ old('roles_id', 2) == 3 ? 'selected' : '' }}>Empleado</option>
                    
                 </select>
                 <x-input-error for="roles_id" class="mt-2" />
