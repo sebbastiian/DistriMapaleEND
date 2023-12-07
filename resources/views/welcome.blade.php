@@ -97,6 +97,7 @@
 .info-title {
     font-size: 28px;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 /* Estilos para el texto de información */
@@ -107,15 +108,18 @@
 
 /* Estilos específicos para cada caja de información */
 .mission-box {
-    background-color: #D10024;
+    background-color: #15161D;
+    color: #fff;
 }
 
 .vision-box {
-    background-color: #ffffff;
+    background-color: #15161D;
+    color: #fff;
 }
 
 .goal-box {
-    background-color: #D10024;
+    background-color: #15161D;
+    color: #fff;
 }
 
 /* Color blanco para el texto */
@@ -305,38 +309,6 @@
         </header>
         <!-- /HEADER -->
 
-   <!-- INFORMACION -->
-<div id="informacion" class="section">
-    <div class="container">
-        <div class="info-container">
-
-            <!-- SOBRE NOSOTROS (Ocupa el ancho completo) -->
-            <div class="info-box full-width">
-                <h3 class="info-title white-text">Sobre Nosotros</h3>
-                <p class="info-text white-text">En DistriMapale, nos esforzamos por ofrecer experiencias únicas a través de nuestra amplia gama de productos. Colaboramos con marcas reconocidas como Bavaria, Postobón, Margarita, Coca-Cola y te invitamos a explorar nuestro mundo de bebidas y snacks de alta calidad. Desde cervezas artesanales hasta deliciosos antojitos, estamos aquí para hacer que cada momento sea especial. Descubre la diferencia con DistriMapale.</p>
-            </div>
-            <!-- /SOBRE NOSOTROS -->
-
-            <!-- MISION -->
-            <div class="info-box mission-box">
-                <h3 class="info-title">Misión</h3>
-                <p class="info-text">Nuestra misión es ser mucho más que un proveedor. Buscamos ser tus cómplices en la creación de momentos inolvidables, ofreciendo productos de calidad excepcional. Nos comprometemos a proporcionar un servicio que va más allá de las expectativas, fomentando la alegría y la responsabilidad en cada encuentro.</p>
-            </div>
-            <!-- /MISION -->
-
-            <!-- VISION -->
-            <div class="info-box vision-box">
-                <h3 class="info-title">Visión</h3>
-                <p class="info-text">En DistriMapale, aspiramos a ser reconocidos no solo por la excelencia en distribución, sino como impulsores de momentos extraordinarios. Buscamos ampliar horizontes, diversificar experiencias y ser líderes en innovación. Nuestra visión va más allá de productos; es la creación de recuerdos que perduran.</p>
-            </div>
-            <!-- /VISION -->
-
-        </div>
-        <!-- /info-container -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /INFORMACION -->
 
 <!-- /SECTION -->
 
@@ -349,7 +321,7 @@
             <!-- section title -->
             <div class="col-md-12">
                 <div class="section-title">
-                    <h3 class="title">Conoce Algunos de nuestros product</h3>
+                    <h3 class="title">Conoce Algunos de nuestros productos</h3>
                 </div>
             </div>
             <!-- /section title -->
@@ -806,6 +778,39 @@
             <!-- /container -->
         </div>
         <!-- /NEWSLETTER -->
+
+         <!-- INFORMACION -->
+<div id="informacion" class="section">
+    <div class="container">
+        <div class="info-container">
+
+            <!-- SOBRE NOSOTROS (Ocupa el ancho completo) -->
+            <div class="info-box full-width">
+                <h3 class="info-title white-text">Sobre Nosotros</h3>
+                <p class="info-text white-text">En DistriMapale, nos esforzamos por ofrecer experiencias únicas a través de nuestra amplia gama de productos. Colaboramos con marcas reconocidas como Bavaria, Postobón, Margarita, Coca-Cola y te invitamos a explorar nuestro mundo de bebidas y snacks de alta calidad. Desde cervezas artesanales hasta deliciosos antojitos, estamos aquí para hacer que cada momento sea especial. Descubre la diferencia con DistriMapale.</p>
+            </div>
+            <!-- /SOBRE NOSOTROS -->
+
+            <!-- MISION -->
+            <div class="info-box mission-box">
+                <h3 class="info-title">Misión</h3>
+                <p class="info-text">Nuestra misión es ser mucho más que un proveedor. Buscamos ser tus cómplices en la creación de momentos inolvidables, ofreciendo productos de calidad excepcional. Nos comprometemos a proporcionar un servicio que va más allá de las expectativas, fomentando la alegría y la responsabilidad en cada encuentro.</p>
+            </div>
+            <!-- /MISION -->
+
+            <!-- VISION -->
+            <div class="info-box vision-box">
+                <h3 class="info-title">Visión</h3>
+                <p class="info-text">En DistriMapale, aspiramos a ser reconocidos no solo por la excelencia en distribución, sino como impulsores de momentos extraordinarios. Buscamos ampliar horizontes, diversificar experiencias y ser líderes en innovación. Nuestra visión va más allá de productos; es la creación de recuerdos que perduran.</p>
+            </div>
+            <!-- /VISION -->
+
+        </div>
+        <!-- /info-container -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /INFORMACION -->
 
         <!-- FOOTER -->
         <footer id="footer">
