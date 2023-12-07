@@ -16,17 +16,22 @@ class PedidosController extends Controller
      */
     public function index()
     {
-        $pedidos = DB::table('pedidos')
+        $pedidos = \DB::table('pedidos')
         ->join('proveedores', 'pedidos.idproveedor', '=', 'proveedores.idproveedor')
         ->join('users', 'pedidos.idadministrador', '=', 'users.id')
-        ->join('detallespedido', 'pedidos.idpedido', '=', 'detallespedido.idpedido')
-        ->join('productos', 'detallespedido.idproducto', '=', 'productos.idproducto')
-        ->select('pedidos.idpedido', 'pedidos.fechahora', 'pedidos.plazoentrega','detallespedido.cantidadsolicitada', 'proveedores.idproveedor as idprove', 'proveedores.nombre', 'proveedores.email','productos.idproducto', 'proveedores.telefono', 'users.id', 'users.name', 'users.apellido', 'productos.descripcion')
+        ->join('detalles_pedidos', 'pedidos.idpedido', '=', 'detalles_pedidos.idpedido')
+        ->join('productos', 'detalles_pedidos.idproducto', '=', 'productos.idproducto')
+        ->select(
+            'pedidos.*',
+            'proveedores.*',
+            'users.*',
+            'detalles_pedidos.*',
+            'productos.*'
+        )
         ->get();
 
-        //eturn $pedidos;
+return view('administrador.pedidos', compact('pedidos'));
 
-        return view('administrador/pedidos', ['pedidos'=>$pedidos ]);
     }
     
     /**
