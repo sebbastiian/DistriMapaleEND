@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+:root{
+    --color-barra-lateral:#15161D  ;
+
+    --color-texto:rgb(0, 0, 0);
+    --color-texto-menu:rgb(134,136,144);
+
+    --color-menu-hover:#FDFEFE;
+    --color-menu-hover-texto:rgb(0,0,0);
+
+    --color-boton:rgb(209, 0, 36);
+    --color-boton-texto:rgb(255, 255, 255);
+
+    --color-switch-base :rgb(201,202,206);
+    --color-switch-circulo:rgb(241,241,241);
+
+    --color-scroll:rgb(192,192,192);
+    --color-scroll-hover:rgb(134,134,134);
+}
+
+.dark-mode{
+    --color-barra-lateral:#15161D;
+
+    --color-texto:rgb(255,255,255);
+    --color-texto-menu:rgb(110,110,117);
+
+    --color-menu-hover:#212121 ;
+    --color-menu-hover-texto:rgb(238,238,238);
+
+    --color-boton:rgb(209, 0, 36);
+    --color-boton-texto:#fff;
+
+    --color-linea:rgb(90,90,90);
+
+    --color-switch-base :rgb(209, 0, 36) ;
+    --color-switch-circulo:rgb(255,255,255);
+
+    --color-scroll:rgb(68,69,74);
+    --color-scroll-hover:rgb(85,85,85);
+}
+.ver-mas{
+    border: none;
+    background-color: #ffffff00;
+    display: flex;
+    align-items: center;
+}
+.Detalles div{
+    display: flex;
+    justify-content: center
+}
+.botonmo{
+    width: 22px;
+    height: 22px;
+}
+.search-bar{
+    display: flex;
+    align-items: center;
+}
+.header-searchh {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    border-radius: 40px;
+    padding: 4px;
+    justify-content: space-between; /* Para alinear elementos a los lados */
+}
+
+/* Estilo para el campo de entrada de texto */
+.inputsrch {
+    border: none;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+    flex-grow: 1;
+    margin-right: 8px; /* Espacio entre la barra de búsqueda y el botón */
+    width: 80%; /* Ajusta el ancho según tus necesidades */
+    padding: 0px 15px;
+}
+
+/* Estilo para el botón de búsqueda */
+.search-botn {
+        width: 160px;
+        height: 40px;
+        font-weight: 700;
+        background: #D10024;
+        color: #FFF;
+        border: none;
+        border-radius: 0px 40px 40px 0px;
+}
+.search-botn:hover{
+    background-color: #9a001a;
+}
+
+.inputsrch{
+    height: 40px;
+    border-start-start-radius: 40px;
+    border-end-start-radius: 40px;
+}
+
+.dropdown{
+    cursor: pointer;
+}
+
+    /* Estilos para la ventana modal */
+    .modal-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-container h2{
+        margin-bottom: 20px;
+    }
+
+    #modal-container{
+        text-align: center;
+    }
+    
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .close-modal {
+        cursor: pointer;
+        float: right;
+        font-size: 18px;
+    }
+
+.creanuv{
+    text-decoration: none;
+}
+.navegacion-admin{
+    margin: -20px;
+}
+.card-body{
+    color: var(--color-texto);
+}
+.color{
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    margin-top: 8%;
+    margin-bottom: 4%;
+    border: 2px solid #b9b9b964;
+}
+.color:hover{
+    border: 2px solid #b9b9b9;
+}
+.navadmin a{
+    color: var(--color-texto);
+    text-decoration: none;
+}
+.filtro-tablas a.active,
+.filtro-tablas a::before {
+    border-bottom: 2px solid #D10024;
+    font-weight: 500;
+    color: #D10024;
+}
+
+.cerrar-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333;
+}
+
+
+.navadmin{
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
+    text-transform: uppercase;
+    text-align: center ;
+    border-bottom: 1px solid #b9b9b9;
+
+}
+
+@media screen and (max-width: 400px){
+    .navadmin{
+        flex-direction: column;
+    }
+}
+
+.titabl {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos al inicio y al final del contenedor */
+    text-align: center; /* Ajusta el texto al centro */
+    width: 100%;
+    padding: 2%;
+    padding-bottom: 0%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    
+}
+
+.titabl h2 {
+    color: var(--color-texto);
+    display: inline-block;
+    margin: 0; /* Elimina el margen predeterminado del h2 */
+}
+.caja-crear a{
+    text-decoration: none;
+}
+.caja-crear {
+    /* Elimina el float y utiliza flex para la caja-crear */
+    display: flex;
+    flex-direction: column; /* Ajusta la dirección del contenedor a columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-top: auto; /* Agrega un margen superior automático para centrar verticalmente */
+}
+
+.caja-crear .boton {
+    padding: 8px;
+    width: max-content;
+    height: max-content;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+    text-decoration: none;
+}
+
+  
+.tablee {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+}
+.tittlee h1{
+    margin-left: 2%;
+}
+.tittlee{
+    color: #fff;
+    padding: 1%;
+    border-bottom: 4px solid #D10024;
+    background-color: #15161D;
+    text-align: start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-menu-hover);
+}
+    
+/*-----------------Menu*/
+.menu{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+    right: 15px;
+    top: 15px;
+    z-index: 100;
+}
+
+
+/*----------------Barra Lateral*/
+.barra-lateral{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    height: 100%;
+    overflow: hidden;
+    padding: 20px 15px;
+    background-color: var(--color-barra-lateral);
+    transition: width 0.5s ease,background-color 0.3s ease,left 0.5s ease;
+    z-index: 50;
+}
+
+.mini-barra-lateral{
+    width: 80px;
+}
+.barra-lateral span{
+    width: 100px;
+    white-space: nowrap;
+    font-size: 18px;
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.5s ease,width 0.5s ease;
+}
+.barra-lateral span.oculto{
+    opacity: 0;
+    width: 0;
+}
+
+/*------------> Nombre de la página */
+.barra-lateral .nombre-pagina{
+    width: 100%;
+    height: 45px;
+    color: #fff;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+.barra-lateral .nombre-pagina ion-icon{
+    min-width: 50px;
+    font-size: 40px;
+    cursor: pointer;
+}
+.barra-lateral .nombre-pagina span{
+    margin-left: 5px;
+    font-size: 25px;
+}
+
+.icont{
+    min-width: 50px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/*------------> Botón*/
+.barra-lateral .boton{
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+}
+.barra-lateral .boton ion-icon{
+    min-width: 50px;
+    font-size: 25px;
+}
+
+
+/*--------------> Menu Navegación*/
+.barra-lateral .navegacion{
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.barra-lateral .navegacion::-webkit-scrollbar{
+    width: 5px;
+}
+.barra-lateral .navegacion::-webkit-scrollbar-thumb{
+    background-color: var(--color-scroll);
+    border-radius: 5px;
+}
+.barra-lateral .navegacion::-webkit-scrollbar-thumb:hover{
+    background-color: var(--color-scroll-hover);
+}
+.barra-lateral .navegacion li{  
+    list-style: none;
+    display: flex;
+    margin-bottom: 5px;
+}
+.barra-lateral .navegacion a{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+    color: var(--color-texto-menu);
+}
+.barra-lateral .navegacion a:hover{
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}
+.barra-lateral .navegacion ion-icon{
+    min-width: 50px;
+    font-size: 20px;
+}
+
+/*-----------------> Linea*/
+.barra-lateral .linea{
+    width: 100%;
+    height: 1px;
+    margin-top: 15px;
+    background-color: var(--color-linea);
+}
+
+/*----------------> Modo Oscuro*/
+.barra-lateral .modo-oscuro{
+    width: 100%;
+    margin-bottom: 80px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.barra-lateral .modo-oscuro .info{
+    width: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: var(--color-texto-menu);
+}
+.barra-lateral .modo-oscuro ion-icon{
+    width: 50px;
+    font-size: 20px;
+}
+
+/*--->switch*/
+.barra-lateral .modo-oscuro .switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    cursor: pointer;
+}
+.barra-lateral .modo-oscuro .base{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 35px;
+    height: 20px;
+    background-color: var(--color-switch-base);
+    border-radius: 50px;
+}
+.barra-lateral .modo-oscuro .circulo{
+    position: absolute;
+    width: 18px;
+    height: 90%;
+    background-color: var(--color-switch-circulo);
+    border-radius: 50%;
+    left: 2px;
+    transition: left 0.5s ease;
+}
+.barra-lateral .modo-oscuro .circulo.prendido{
+    left: 15px;
+}
+
+/*---------------> Usuario*/
+.barra-lateral .usuario{
+    width: 100%;
+    display: flex;
+}
+.barra-lateral .usuario img{
+    width: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+}
+.barra-lateral .usuario .info-usuario{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    overflow: hidden;
+}
+.barra-lateral .usuario .nombre-email{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+.barra-lateral .usuario .nombre{
+    font-size: 15px;
+}
+.barra-lateral .usuario .email{
+    font-size: 13px;
+}
+.barra-lateral .usuario ion-icon{
+    font-size: 20px;
+}
+
+
+/*-------------main*/
+
+#inbox{
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}
+
+main{
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.5s ease;
+}
+main.min-main{
+    margin-left: 80px;
+    text-align: center;
+}
+
+
+
+/*------------------> Responsive*/
+@media (max-height: 660px){
+    .barra-lateral .nombre-pagina{
+        margin-bottom: 5px;
+    }
+    .barra-lateral .modo-oscuro{
+        margin-bottom: 3px;
+    }
+}
+@media (max-width: 600px){
+    .barra-lateral{
+        position: fixed;
+        left: -250px;
+    }
+    .max-barra-lateral{
+        left: 0;
+    }
+    .menu{
+        display: flex;
+    }
+    .menu ion-icon:nth-child(2){
+        display: none;
+    }
+    main{
+        margin-left: 0;
+    }
+    main.min-main{
+        margin-left: 0;
+    }
+    
+}
