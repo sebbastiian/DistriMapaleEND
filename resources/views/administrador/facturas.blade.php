@@ -6,6 +6,7 @@
     <title>DistriMapale</title>
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/styleTablas.css">
+    <link rel="stylesheet" href="/css/facturaa.css">
 </head>
 <body>
     <div class="menu">
@@ -45,7 +46,7 @@
                     </a>
                 </li>
                 <li>
-                    <a id="inbox" href="{{route('administrador.facturas')}}">
+                    <a href="{{route('administrador.facturas')}}">
                         <ion-icon name="cash-outline"></ion-icon>
                         <span>Ventas</span>
                     </a>
@@ -63,7 +64,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{-- {{route('administrador.pedidos')}} --}}">
+                    <a href="{{route('administrador.pedidos')}}">
                         <ion-icon name="bag-add-outline"></ion-icon>
                         <span>Pedidos</span>
                     </a>
@@ -113,8 +114,8 @@
                             @csrf
 
                             <button class="ver-mas" href="{{ route('logout') }}"
-                                   @click.prevent="$root.submit();">
-                              {{ __('Salir') }}
+                                     @click.prevent="$root.submit();">
+                                {{ __('Salir') }}
                             </button>
                         </form>
                         
@@ -127,47 +128,61 @@
 
 
     <main>
+        <div class="navegacion-admin">
+            <div class="tittlee">
+                <h2>Inventario</h2>
+                <div class="search-bar">
+                    <input class="inputsrch" type="text" id="searchInput" placeholder="Buscar productos...">
+                    <button class="search-botn " onclick="buscarProductos()">Buscar</button>
+                </div>                               
+            </div>
+        </div>
+        <div class="color">
+            <div class="titabl tabla-productos">
 
-        <div class="tittlee">
-            <h1>Ventas</h1>
-        </div>
+                <h1 style="margin-bottom: 7%">Listado de Facturas</h1>
+                
+            </div>
+            <div class="containerr">
+
+                
+                <div>
+                    @foreach ($facturas as $factura)
+                    <div class="card">
+                        <div class="card-header">
+                            Factura #{{ $factura->idfactura }}
+                        </div>
+                        <div class="card-body">
+                            <p>Fecha y Hora: {{ $factura->fechahora }}</p>
+                            <p>Total: ${{ $factura->total }}</p>
+                            <p>Estado: {{ $factura->estado }}</p>
         
-        <div class="containert">
-            <table class="tablee">
-                <caption>Clientes</caption>
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Correo</th>
-                        <th>Tienda</th>
-                        <th>Direccion</th>
-                        <th>Teléfono</th>
-                        <th>Tipo Doc.</th>
-                        <th>Documento</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($usuarios as $usuario)
-                        @if ($usuario->roles_id == 2)
-                            <tr>
-                                <td data-label="Id">{{ $usuario->id }}</td>
-                                <td data-label="Nombre">{{ $usuario->name }}</td>
-                                <td data-label="Apellido">{{ $usuario->apellido }}</td>
-                                <td data-label="Correo">{{ $usuario->email }}</td>
-                                <td data-label="Tienda">{{ $usuario->nombretienda }}</td>
-                                <td data-label="Direccion">{{ $usuario->direccion }}</td>
-                                <td data-label="Teléfono">{{ $usuario->telefono }}</td>
-                                <td data-label="Tipo Doc.">{{ $usuario->tipodocumento }}</td>
-                                <td data-label="Documento">{{ $usuario->documento }}</td>
-                            </tr>
-                        @endif
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+                            <h5>Detalles del Producto:</h5>
+                            <div>
+                                <h6>ID Detalle Factura: {{ $factura->iddetallefactura }}</h6>
+                                <h6>Nombre del Producto: {{ $factura->name }}</h6>
+                                <h6>Cantidad: {{ $factura->cantidad }}</h6>
+                                <h6>Valor Unitario: ${{ $factura->valorunitario }}</h6>
+                                <!-- Agrega más detalles del producto según sea necesario -->
+                            </div>
         
+                            <h5>Detalles del Cliente:</h5>
+                            <div>
+                                <h6>Nombre: {{ $factura->name }} {{ $factura->apellido }}</h6>
+                                <h6>Correo Electrónico: {{ $factura->email }}</h6>
+                                <h6>Dirección: {{ $factura->direccion }}</h6>
+                                <!-- Agrega más detalles del cliente según sea necesario -->
+                            </div>
+        
+                            <!-- Puedes agregar más secciones con detalles adicionales -->
+        
+                        </div>
+                    </div>
+                    <br>
+                @endforeach
+                </div>
+            </div>
+        </div>
     </main>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

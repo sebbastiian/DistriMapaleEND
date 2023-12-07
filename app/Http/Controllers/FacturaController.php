@@ -25,7 +25,7 @@ class FacturaController extends Controller
             )
             ->get();  // Ejecuta la consulta y obtén los resultados
     
-        return $facturas;
+            return view('administrador.facturas', compact('facturas'));
     }
 
 
