@@ -9,5 +9,5 @@ class DetallesPedido extends Model
 {
     use HasFactory;
     protected $primaryKey ='iddetallepedido';
-    protected $fillable = ['idpedido','idproducto','valorunitario','cantidadsolicitada'];
+    protected $fillable = ['idpedido','idproducto','cantidadsolicitada'];
 }

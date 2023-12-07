@@ -101,11 +101,11 @@ Route::get('administrador/inventario',[App\Http\Controllers\ProductosController:
 Route::get('/blog/{productos:idproducto}',[App\Http\Controllers\FrontController::class, 'productos'])->name('productos');
 
 /* PEDIDOS */
-/* Route::get('administrador/productos/crear', [App\Http\Controllers\ProductosController::class, 'create'])->name('productos.create');
-Route::post('administrador/productos/agregar', [App\Http\Controllers\ProductosController::class, 'store'])->name('productos.store');
-Route::get('administrador/productos/edit/{id}', [App\Http\Controllers\ProductosController::class, 'edit'])->name('administrador.productos.edit');
-Route::get('administrador/productos/actualizar/{id}', [App\Http\Controllers\ProductosController::class, 'update'])->name('productos.update');
-Route::get('administrador/productos/eliminar/{id}',  [App\Http\Controllers\ProductosController::class, 'destroy'])->name('productos.destroy'); */
+Route::get('administrador/pedidos/crear', [App\Http\Controllers\PedidosController::class, 'create'])->name('pedidos.create');
+Route::post('administrador/pedidos/agregar', [App\Http\Controllers\PedidosController::class, 'store'])->name('pedidos.store');
+Route::get('administrador/pedidos/edit/{id}', [App\Http\Controllers\PedidosController::class, 'edit'])->name('administrador.pedidos.edit');
+Route::get('administrador/pedidos/actualizar/{id}', [App\Http\Controllers\PedidosController::class, 'update'])->name('pedidos.update');
+Route::get('administrador/pedidos/eliminar/{id}',  [App\Http\Controllers\PedidosController::class, 'destroy'])->name('pedidos.destroy'); 
 Route::get('administrador/pedidos',[App\Http\Controllers\PedidosController::class, 'index'])->name('administrador.pedidos');    
 
 /* FACTURAS */

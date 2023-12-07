@@ -18,13 +18,16 @@ class PedidosController extends Controller
     public function index()
     {
         $pedidos = DB::table('pedidos')
-            ->join('proveedores', 'pedidos.idproveedor', '=', 'proveedores.idproveedor')
-            ->join('users', 'pedidos.idadministrador', '=', 'users.id')
-            ->select('pedidos.idpedido','pedidos.fechahora','pedidos.plazoentrega','pedidos.total','proveedores.idproveedor','proveedores.nombre','proveedores.email','proveedores.telefono','users.id','users.name','users.apellido')
-            ->orderBy('pedidos.fechahora', 'ASC')
-            ->get();
-    
-        return $pedidos;
+        ->join('proveedores', 'pedidos.idproveedor', '=', 'proveedores.idproveedor')
+        ->join('users', 'pedidos.idadministrador', '=', 'users.id')
+        ->join('detallespedido', 'pedidos.idpedido', '=', 'detallespedido.idpedido')
+        ->join('productos', 'detallespedido.idproducto', '=', 'productos.idproducto')
+        ->select('pedidos.idpedido', 'pedidos.fechahora', 'pedidos.plazoentrega','detallespedido.cantidadsolicitada', 'proveedores.idproveedor as idprove', 'proveedores.nombre', 'proveedores.email','productos.idproducto', 'proveedores.telefono', 'users.id', 'users.name', 'users.apellido', 'productos.descripcion')
+        ->get();
+
+        //eturn $pedidos;
+
+        return view('administrador/pedidos', ['pedidos'=>$pedidos ]);
     }
     
     /**
@@ -32,11 +35,16 @@ class PedidosController extends Controller
      */
     public function create()
     {
-        //
-   /*      $proveedores = Proveedor::all();
-        $administradores = User::all();
-        $productos = Productos::all();
-        return view('pedidos.create', compact('proveedores', 'administradores', 'productos')); */
+        $pedidos = DB::table('pedidos')
+        ->join('proveedores', 'pedidos.idproveedor', '=', 'proveedores.idproveedor')
+        ->join('users', 'pedidos.idadministrador', '=', 'users.id')
+        ->join('detallespedido', 'pedidos.idpedido', '=', 'detallespedido.idpedido')
+        ->join('productos', 'detallespedido.idproducto', '=', 'productos.idproducto')
+        ->select('pedidos.idpedido', 'pedidos.fechahora','detallespedido.cantidadsolicitada', 'pedidos.plazoentrega', 'proveedores.idproveedor', 'proveedores.nombre', 'proveedores.email', 'proveedores.telefono','productos.idproducto', 'users.id', 'users.name', 'users.apellido', 'productos.descripcion')
+        ->get();
+
+        return view('administrador/pedidos/create',['pedidos'=>$pedidos ]);
+        //return view('pedidos.create', compact('proveedores', 'administradores', 'productos')); 
     }
 
     /**
@@ -84,4 +92,6 @@ class PedidosController extends Controller
     {
         //
     }
+
+
 }
