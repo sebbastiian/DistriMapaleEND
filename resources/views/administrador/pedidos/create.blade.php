@@ -143,17 +143,24 @@
                     <div class="mt-4">
                         <label for="idproveedor">Proveedor</label>
                         <select name="idproveedor" id="idproveedor" class="block mt-1 w-full">
-                            @foreach($pedidos as $proveedor)
-                                <option value="{{ $proveedor ->idprove }}">{{ $proveedor->nombre }}</option>
+                            @foreach($pro as $proveedor)
+                                <option value="{{ $proveedor->idproveedor }}">{{ $proveedor->nombre }}</option>
                             @endforeach
                         </select>
                     </div>
+                    
+                    
 
             
                     <div class="mt-4">
-                        <label for="descripcion">Descripción del Producto</label>
-                        <input type="text" name="descripcion" id="descripcion" class="block mt-1 w-full">
+                        <label for="idproducto">Descripcion del producto</label>
+                        <select name="idproducto" id="idproducto" class="block mt-1 w-full">
+                            @foreach($prod as $producto)
+                                <option value="{{ $producto->idproducto }}">{{ $producto->descripcion}}</option>
+                            @endforeach
+                        </select>
                     </div>
+                    
             
                     <div class="mt-4">
                         <label for="cantidadsolicitada">Cantidad Solicitada</label>

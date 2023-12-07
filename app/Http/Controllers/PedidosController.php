@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\DetallesPedido;
 use App\Models\Pedidos;
-use App\Models\Proveedor;
+use App\Models\Proveedores;
 use App\Models\User;
 use App\Models\Productos;
 use DB;
@@ -35,15 +34,12 @@ class PedidosController extends Controller
      */
     public function create()
     {
-        $pedidos = DB::table('pedidos')
-        ->join('proveedores', 'pedidos.idproveedor', '=', 'proveedores.idproveedor')
-        ->join('users', 'pedidos.idadministrador', '=', 'users.id')
-        ->join('detallespedido', 'pedidos.idpedido', '=', 'detallespedido.idpedido')
-        ->join('productos', 'detallespedido.idproducto', '=', 'productos.idproducto')
-        ->select('pedidos.idpedido', 'pedidos.fechahora','detallespedido.cantidadsolicitada', 'pedidos.plazoentrega', 'proveedores.idproveedor', 'proveedores.nombre', 'proveedores.email', 'proveedores.telefono','productos.idproducto', 'users.id', 'users.name', 'users.apellido', 'productos.descripcion')
-        ->get();
+        
 
-        return view('administrador/pedidos/create',['pedidos'=>$pedidos ]);
+        $pro = Proveedores::all();
+        $prod = Productos::all();
+
+        return view('administrador/pedidos/create',['prod'=>$prod , 'pro'=>$pro]);
         //return view('pedidos.create', compact('proveedores', 'administradores', 'productos')); 
     }
 
@@ -52,8 +48,27 @@ class PedidosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Crear un nuevo pedido
+        $pedidos = new Pedidos();
+        $pedidos->fechahora = now();
+        $pedidos->plazoentrega = $request->input('plazoentrega');
+        $pedidos->idadministrador = auth()->user()->id;
+        $pedidos->idproveedor = $request->input('idproveedor');
+        $pedidos->save();
+    
+        // Guardar detalles de pedidos en la base de datos
+        $detallepedido = new DetallesPedido();
+        $detallepedido->idpedido = $pedidos->idpedido;
+        // Asignar idproducto (asegúrate de reemplazar 'idproducto' con el nombre correcto del campo)
+        $detallepedido->idproducto = $request->input('idproducto'); 
+        $detallepedido->cantidadsolicitada = $request->input('cantidadsolicitada');
+        $detallepedido->save();
+    
+        return redirect()->back()->with("success", "Tu pedido está en camino!");
     }
+    
+
+    
 
     /**
      * Display the specified resource.
