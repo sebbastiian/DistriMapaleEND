@@ -8,6 +8,29 @@ use App\Models\DetalleFactura;
 
 class FacturaController extends Controller
 {
+    public function index()
+    {
+        // Consulta para obtener las facturas del usuario autenticado
+        $facturas = \DB::table('detallesfactura')
+            ->join('facturas', 'detallesfactura.idfactura', '=', 'facturas.idfactura')
+            ->join('productos', 'detallesfactura.idproducto', '=', 'productos.idproducto')
+            ->join('users as clientes', 'facturas.idcliente', '=', 'clientes.id')
+            ->join('users as transportadores', 'facturas.idtrasnportador', '=', 'transportadores.id')
+            ->select(
+                'detallesfactura.*',
+                'facturas.*',
+                'productos.*',
+                'clientes.*',
+                'transportadores.*'
+            )
+            ->get();  // Ejecuta la consulta y obtén los resultados
+    
+        return $facturas;
+    }
+
+
+    
+
     public function store(Request $request)
     {
         try {

@@ -111,6 +111,7 @@ Route::get('administrador/pedidos',[App\Http\Controllers\PedidosController::clas
 /* FACTURAS */
 Route::get('administrador/facturas',[App\Http\Controllers\FacturasController::class, 'index3'])->name('administrador.facturas'); 
 Route::post('cart/chekout', [App\Http\Controllers\FacturaController::class, 'store'])->name('facturas.store');
+Route::get('administrador/fracturas',[App\Http\Controllers\FacturaController::class, 'index'])->name('administrador.facturas');    
 
 /* CONTABILIDAD */
 Route::get('administrador/facturas',[App\Http\Controllers\ContabilidadController::class, 'index'])->name('administrador.contabilidad'); 
