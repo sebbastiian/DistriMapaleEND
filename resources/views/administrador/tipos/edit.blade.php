@@ -6,6 +6,7 @@
     <title>DistriMapale</title>
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/styleTablas.css">
+    <link rel="stylesheet" href="/css/formCrear.css">
 </head>
 <body>
     <div class="menu">
@@ -131,19 +132,21 @@
             </div>
         </div>
 
-        <div class="cajaform">
-            <form action="{{ route('tipos.update', $tipos->idtipo) }}" method="POST">
-                @csrf
-                @method('PUT') <!-- Agregamos esta línea para indicar el método PUT -->
-                <fieldset class="fieldset">
-                    <legend>Editar datos del Tipo</legend>
-                    <div>
-                        <label>Nombre:</label>
-                        <input type="text" name="nombre" id="nombre" value="{{ $tipos->nombre }}">
-                    </div>
-                    <button type="submit">Actualizar</button>
-                </fieldset>
-            </form>
+        <div class="color">
+            <div class="container">
+                <form action="{{ route('tipos.update', $tipos->idtipo) }}" method="POST">
+                    @csrf
+                    @method('PUT') 
+    
+                        <div>
+                            <label>Nombre:</label>
+                            <input type="text" name="nombre" id="nombre" value="{{ $tipos->nombre }}">
+                        </div>
+                        <div id="crear">
+                            <button type="submit">Actualizar</button>
+                        </div>
+                </form>
+            </div>
         </div>
     </main>
 

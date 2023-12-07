@@ -6,6 +6,7 @@
     <title>DistriMapale</title>
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/styleTablas.css">
+    <link rel="stylesheet" href="/css/formCrear.css">
 </head>
 <body>
     <div class="menu">
@@ -30,37 +31,13 @@
         <nav class="navegacion">
             <ul>
                 <li>
-                    <a  href="{{route('administrador.index')}}">
-                        <ion-icon name="clipboard-outline"></ion-icon>
-                        <span>Tablas</span>
-                    </a>
-                </li>
-                <li>
-                    <a id="inbox" href="#">
+                    <a href="{{route('administrador.inventario')}}">
                         <ion-icon name="folder-outline"></ion-icon>
                         <span>Inventario</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('administrador.clientes')}}">
-                        <ion-icon name="people-outline"></ion-icon>
-                        <span>Clientes</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('administrador.transportadores')}}">
-                        <ion-icon name="man-outline"></ion-icon>
-                        <span>Empleados</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('administrador.vehiculos')}}">
-                        <ion-icon name="car-sport-outline"></ion-icon>
-                        <span>Vehículos</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('administrador.programaciones')}}">
+                    <a id="inbox" href="{{route('administrador.programaciones')}}">
                         <ion-icon name="calendar-outline"></ion-icon>
                         <span>Cronograma</span>
                     </a>
@@ -72,9 +49,39 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <ion-icon name="calculator-outline"></ion-icon>
+                    <a href="{{-- {{route('administrador.contabilidad')}} --}}">
+                        <ion-icon name="bar-chart-outline"></ion-icon>
                         <span>Contabilidad</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('administrador.proveedores')}}">
+                        <ion-icon name="bag-handle-outline"></ion-icon>
+                        <span>Proveedores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('administrador.pedidos')}}">
+                        <ion-icon name="bag-add-outline"></ion-icon>
+                        <span>Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('administrador.transportadores')}}">
+                        <ion-icon name="man-outline"></ion-icon>
+                        <span>Empleados </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('administrador.vehiculos')}}">
+                        <ion-icon name="car-sport-outline"></ion-icon>
+                        <span>Vehículos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('administrador.clientes')}}">
+                        <ion-icon name="people-outline"></ion-icon>
+                        <span>Clientes</span>
                     </a>
                 </li>
             </ul>
@@ -125,22 +132,30 @@
 
 
     <main>
-
-        <div class="tittlee">
-            <h1>Editar Marcas</h1>
+        <div class="navegacion-admin">
+            <div class="tittlee">
+                <h1>Editar Marcas</h1>
+            </div>
         </div>
-        <div class="cajaform">
-            <form action="{{ route('marcas.update',$marcas->idmarca)}}" method="put">
-                @csrf
-                <fieldset class="fieldset">
-                    <legend>Editar datos de la Marca</legend>
-                    <div>
-                        <label>Nombre:</label>
-                        <input type="text" name="nombre" id="" value="{{$marcas->nombre}}">
+        <div class="color">
+            <div class="container">
+                <form action="{{ route('marcas.update', $marcas->idmarca) }}" method="PUT">
+                    @csrf
+            
+                    <div class="mt-4">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre" value="{{ $marcas->nombre }}" class="block mt-1 w-full">
                     </div>
-                    <button type="submit">Actualizar</button>
-                </fieldset>
-            </form>
+            
+                    <div class="mt-4">
+                        <label for="" style="color:white">.</label>
+                    </div>
+            
+                    <div class="mt-4" id="crear">
+                        <button type="submit">Actualizar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 

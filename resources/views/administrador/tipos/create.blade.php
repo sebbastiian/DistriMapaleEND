@@ -6,6 +6,7 @@
     <title>DistriMapale</title>
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/styleTablas.css">
+    <link rel="stylesheet" href="/css/formCrear.css">
 </head>
 <body>
     <div class="menu">
@@ -131,17 +132,18 @@
             </div>
         </div>
         <div class="color">
-            <form action="{{route('tipos.store')}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <fieldset class="fieldset">
-                <legend>Nuevo Tipo</legend>
-                <div>
-                    <label for="nombre">Nombre</label>
-                     <input type="text" name="nombre" id="nombre">
-                </div>
-                <button type="submit" >Crear tipo</button>
-            </fieldset>
-            </form>
+            <div class="container">
+                <form action="{{route('tipos.store')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div>
+                        <label for="nombre">Nombre</label>
+                         <input type="text" name="nombre" id="nombre">
+                    </div>
+                    <div id="crear">
+                        <button type="submit" >Crear tipo</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 
