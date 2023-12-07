@@ -172,7 +172,7 @@
                                 <td data-label="Estado">{{ $vehiculo->estado }}</td>
                                 <td data-label="Editar" class="botoncc">
                                     <a class="botoned" href="{{route('administrador.vehiculos.edit',$vehiculo->idvehiculo)}}">
-                                        Edita
+                                        Editar
                                     </a>
                                 </td>
                             </tr>
