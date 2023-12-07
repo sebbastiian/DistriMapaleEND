@@ -1,0 +1,43 @@
+
+  .color div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .caja-crearT {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #15161D;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 5%;
+  }
+  
+  .boton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #15161D;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .ion-iconnn {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  /* Agrega tu logo alusivo */
+  .logo {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    margin-bottom: 20px;
+  }
+  

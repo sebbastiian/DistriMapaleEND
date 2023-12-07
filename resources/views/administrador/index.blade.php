@@ -6,6 +6,7 @@
     <title>DistriMapale</title>
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/styleTablas.css">
+    <link rel="stylesheet" href="/css/indexadmin.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
 </head>
 <body>
@@ -134,63 +135,76 @@
             </div>
         </div>
         <div class="color">
-            <div class="caja-crear">
-                <a href="{{ route('vehiculos.create') }}">
-                    <button class="boton">
-                        <ion-icon name="add-outline"></ion-icon>
-                        <span>Crear un nuevo vehiculo</span>
-                    </button>
-                </a>                    
-            </div>
-            <div class="caja-crear">
-                <a href="{{ route('transportador.create') }}">
-                    <button class="boton" >
-                        <ion-icon name="add-outline"></ion-icon>
-                        <span>Crear un nuevo transportador</span>
-                    </button>
-                </a>
-                <a href="{{ route('transportador.createa') }}">
-                    <button class="boton" >
-                        <ion-icon name="add-outline"></ion-icon>
-                        <span>Crear un nuevo administrador</span>
-                    </button>
-                </a>
-            </div>
-            <div class="caja-crear">
-                <a href="{{route('proveedores.create')}}">
-                    <button class="boton">
-                        <ion-icon name="add-outline"></ion-icon>
-                        <span>Crear un nuevo proveedor</span>
-                    </button>
-                </a>
-            </div>
-            <div class="caja-crear">
-                <a href="{{route('programaciones.create')}}">
-                    <button class="boton" >
-                        <ion-icon name="add-outline"></ion-icon>
-                        <span>Asignar una nueva programacion</span>
-                    </button>
-                </a>
-            </div>
-            <div class="caja-crear">
-                <a href="{{route('productos.create')}}">
-                    <button class="boton" >
-                        <ion-icon name="add-outline"></ion-icon>
-                        <span>Crear un nuevo producto</span>
-                    </button>
-                </a>
-                <a href="{{route('marcas.create')}}">
-                    <button class="boton">
-                        <ion-icon name="add-outline"></ion-icon>
-                        <span>Crear una nueva marca</span>
-                    </button>
-                </a>
-                <a href="{{route('tipos.create')}}">
-                    <button class="boton">
-                        <ion-icon name="add-outline"></ion-icon>
-                        <span>Crear un nuevo tipo</span>
-                    </button>
-                </a>
+            <div>
+          
+                    <a class="caja-crearT" href="{{ route('vehiculos.create') }}">
+                        <button class="boton">
+                            <ion-icon name="add-outline"></ion-icon>
+                            <span>Crear un nuevo vehiculo</span>
+                        </button>
+                    </a>                    
+           
+    
+                <div class="caja-crearT">
+                    <a href="{{ route('transportador.create') }}">
+                        <button class="boton" >
+                            <ion-icon name="add-outline"></ion-icon>
+                            <span>Crear un nuevo transportador</span>
+                        </button>
+                    </a>
+                </div>
+    
+                <div class="caja-crearT">
+                    <a href="{{ route('transportador.createa') }}">
+                        <button class="boton" >
+                            <ion-icon name="add-outline"></ion-icon>
+                            <span>Crear un nuevo administrador</span>
+                        </button>
+                    </a>
+                </div>
+    
+                <div class="caja-crearT">
+                    <a href="{{route('proveedores.create')}}">
+                        <button class="boton">
+                            <ion-icon name="add-outline"></ion-icon>
+                            <span>Crear un nuevo proveedor</span>
+                        </button>
+                    </a>
+                </div>
+    
+                <div class="caja-crearT">
+                    <a href="{{route('programaciones.create')}}">
+                        <button class="boton" >
+                            <ion-icon name="add-outline"></ion-icon>
+                            <span>Asignar una nueva programacion</span>
+                        </button>
+                    </a>
+                </div>
+    
+                <div class="caja-crearT">
+                    <a href="{{route('productos.create')}}">
+                        <button class="boton" >
+                            <ion-icon name="add-outline"></ion-icon>
+                            <span>Crear un nuevo producto</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="caja-crearT">
+                    <a href="{{route('marcas.create')}}">
+                        <button class="boton">
+                            <ion-icon name="add-outline"></ion-icon>
+                            <span>Crear una nueva marca</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="caja-crearT">
+                    <a href="{{route('tipos.create')}}">
+                        <button class="boton">
+                            <ion-icon name="add-outline"></ion-icon>
+                            <span>Crear un nuevo tipo</span>
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
