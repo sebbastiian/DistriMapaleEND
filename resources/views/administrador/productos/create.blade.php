@@ -6,6 +6,7 @@
     <title>DistriMapale</title>
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/styleTablas.css">
+    <link rel="stylesheet" href="/css/formCrear.css">
 </head>
 <body>
     <div class="menu">
@@ -63,7 +64,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{-- {{route('administrador.pedidos')}} --}}">
+                    <a href="{{route('administrador.pedidos')}}">
                         <ion-icon name="bag-add-outline"></ion-icon>
                         <span>Pedidos</span>
                     </a>
@@ -135,64 +136,73 @@
                 <div class="titulof">
                     <h2>Datos de registro</h2>
                 </div>
-                <form action="{{route('productos.store')}}" method="POST" enctype="multipart/form-data">
+             
+                <form action="{{ route('productos.store') }}" method="POST" enctype="multipart/form-data" class="form-container">
                     @csrf
-    
-                        <div>
-                            <label for="idmarca">Marca</label>
-                            <select name="idmarca" id="idmarca" class="form-control">
-                                @foreach($marcas as $marca)
-                                <option value="{{$marca->idmarca}}">{{$marca->nombre}}</option>
-                                @endforeach
-                            </select>
+            
+                    <div class="mt-4">
+                        <label for="idmarca">Marca</label>
+                        <select name="idmarca" id="idmarca" class="block mt-1 w-full">
+                            @foreach($marcas as $marca)
+                                <option value="{{ $marca->idmarca }}">{{ $marca->nombre }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+            
+                    <div class="mt-4">
+                        <label for="idtipo">Tipo</label>
+                        <select name="idtipo" id="idtipo" class="block mt-1 w-full">
+                            @foreach($tipos as $tipo)
+                                <option value="{{ $tipo->idtipo }}">{{ $tipo->nombre }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+            
+                    <div class="mt-4">
+                        <label for="descripcion">Descripción del producto</label>
+                        <input type="text" name="descripcion" id="descripcion" class="block mt-1 w-full">
+                    </div>
+            
+                    <div class="mt-4">
+                        <label for="cantidad">Cantidad del producto</label>
+                        <input type="number" name="cantidad" id="cantidad" class="block mt-1 w-full">
+                    </div>
+            
+                    <div class="mt-4">
+                        <label for="contneto">Contenido Neto</label>
+                        <input type="text" name="contneto" id="contneto" class="block mt-1 w-full">
+                    </div>
+            
+                    <div class="mt-4">
+                        <label for="unidadxempaque">Unidad x Empaque</label>
+                        <input type="number" name="unidadxempaque" id="unidadxempaque" class="block mt-1 w-full">
+                    </div>
+            
+                    <div class="mt-4">
+                        <label for="disponibilidad">Disponibilidad</label>
+                        <select name="disponibilidad" class="block mt-1 w-full">
+                            <option value="Disponible">Disponible</option>
+                            <option value="NoDisponible">No Disponible</option>
+                        </select>
+                    </div>
+            
+                    <div class="mt-4">
+                        <label for="valor">Valor del producto</label>
+                        <input type="text" name="valor" id="valor" class="block mt-1 w-full">
+                    </div>
+            
+                    <div class="mt-4">
+                        <label for="imagen">Imagen del producto</label>
+                        <input type="file" name="imagen" id="imagen" class="block mt-1 w-full">
+                    </div>
+            
+                    <div class="mt-4">
+                        <label for="" style="color: white">.</label>
+                        <div id="crear">
+                            <button type="submit">Crear Producto</button>
                         </div>
-    
-                        <div>
-                            <label for="idtipo">Tipo</label>
-                            <select name="idtipo" id="idtipo" class="form-control">
-                                @foreach($tipos as $tipo)
-                                <option value="{{$tipo->idtipo}}">{{$tipo->nombre}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-    
-                        <div>
-                            <label for="descripcion">Descripcion del producto</label>
-                            <input type="text" name="descripcion" id="descripcion" >
-                        </div>
-                
-                        <div>
-                            <label for="cantidad">Cantidad del producto</label>
-                            <input type="number" name="cantidad" id="cantidad" >
-                        </div>
-                
-                        <div>
-                            <label for="contneto">Contenido Neto</label>
-                            <input type="text" name="contneto" id="contneto" >
-                        </div>
-                
-                        <div>
-                            <label for="unidadxempaque">Unidad x Empaque</label>
-                            <input type="number" name="unidadxempaque" id="unidadxempaque" >
-                        </div>
-                
-                        <div>
-                            <select name="disponibilidad" class="form-control">
-                                <option value="Disponible">Disponible</option>
-                                <option value="NoDisponible">No Disponible</option>
-                            </select>
-                        </div>
-                
-                        <div>
-                            <label for="valor">Valor del producto</label>
-                            <input type="text" name="valor" id="valor" >
-                        </div>
-                    
-                        <div>
-                            <label for="imagen">Imagen del producto</label>
-                            <input type="file" name="imagen" id="imagen">
-                        </div>
-                        <a href="" onclick="return alert('¡Producto Agregado!')"><button type="submit">Crear Producto</button></a>
+                        
+                    </div>
                 </form>
             </div>
         </div>

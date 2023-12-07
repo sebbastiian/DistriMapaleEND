@@ -142,7 +142,7 @@
                         <label for="fecha" class="block font-bold mb-2">Fecha:</label>
                         <input type="date" name="fecha" id="fecha" value="{{ $programaciones->fecha }}" readonly class="block w-full p-2 border border-gray-300 rounded-md">
                     </div>
-            
+                    
                     <div class="mt-4">
                         <label for="vehiculo" class="block font-bold mb-2">Vehículos:</label>
                         <select class="block w-full p-2 border border-gray-300 rounded-md" name="vehiculo" id="vehiculo" aria-label="Default select example" disabled>

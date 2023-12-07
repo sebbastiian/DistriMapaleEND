@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/styleTablas.css">
     <link rel="stylesheet" href="/css/formCrear.css">
+    
 </head>
 <body>
     <div class="menu">
@@ -160,7 +161,7 @@
                         <label for="fecha" class="block font-bold mb-2">Fecha</label>
                         <input type="date" name="fecha" id="fecha" class="block w-full p-2 border border-gray-300 rounded-md">
                     </div>
-            
+
                     <div class="mt-4">
                         <label for="observaciones" class="block font-bold mb-2">Observaciones</label>
                         <input type="text" name="observaciones" id="observaciones" class="block w-full p-2 border border-gray-300 rounded-md">
