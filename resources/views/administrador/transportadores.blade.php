@@ -164,12 +164,11 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Tipo Doc.</th>
+                        <th>Tipo</th>
                         <th>Documento</th>
                         <th>Sueldo</th>
                         <th>Estado</th>
                         <th>Correo</th>
-                        <th>Direccion</th>
                         <th>Teléfono</th>
                         <th>Editar</th>
                     </tr>
@@ -185,7 +184,6 @@
                                 <td data-label="Salario">{{ $user->sueldo }}</td>
                                 <td data-label="Estado">{{ $user->estado }}</td>     
                                 <td data-label="Correo">{{ $user->email }}</td>
-                                <td data-label="Direccion">{{ $user->direccion }}</td>
                                 <td data-label="Teléfono">{{ $user->telefono }}</td>
                                 <td data-label="Editar" class="botonc">
                                     <a class="botoned" href="{{ route('administrador.transportadores.edit', $user->id) }}">
@@ -219,12 +217,11 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Tipo Doc.</th>
+                        <th>Tipo</th>
                         <th>Documento</th>
                         <th>Sueldo</th>
                         <th>Estado</th>
                         <th>Correo</th>
-                        <th>Direccion</th>
                         <th>Teléfono</th>
                         <th>Editar</th>
                     </tr>
@@ -240,7 +237,6 @@
                                 <td data-label="Salario">{{ $user->sueldo }}</td>
                                 <td data-label="Estado">{{ $user->estado }}</td>     
                                 <td data-label="Correo">{{ $user->email }}</td>
-                                <td data-label="Direccion">{{ $user->direccion }}</td>
                                 <td data-label="Teléfono">{{ $user->telefono }}</td>
                                 <td data-label="Editar" class="botonc">
                                     <a class="botoned" href="{{ route('administrador.transportadores.edit', $user->id) }}">

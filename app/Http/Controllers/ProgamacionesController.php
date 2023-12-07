@@ -49,21 +49,6 @@ class ProgamacionesController extends Controller
      */
     public function store(Request $request)
     {
-        // Validar la fecha para asegurarse de que no sea anterior a la fecha actual
-        $request->validate([
-            'fecha' => 'required|date|after_or_equal:today',
-        ]);
-    
-        // Verificar si ya existe un registro con el vehículo y usuario en la fecha dada
-        $existente = Programaciones::where('idvehiculo', $request->idvehiculo)
-        ->where('idprogramacion', $request->idprogramacion)
-        ->where('fecha', $request->fecha)
-        ->exists();
-    
-    
-        if ($existente) {
-            return redirect()->route('administrador.programaciones.create')->with('error', 'Ya existe un registro para este vehículo y usuario en la fecha seleccionada.');
-        }
     
         // Crear una nueva instancia de Programaciones
         $programaciones = new Programaciones();
@@ -72,7 +57,7 @@ class ProgamacionesController extends Controller
         $programaciones->idvehiculo = $request->idvehiculo;
         $programaciones->fecha = $request->fecha;
         $programaciones->observaciones = $request->observaciones;
-        $programaciones->idtransportador = $request->id;  // Asumí que el nombre de la propiedad es 'idtransportador'
+        $programaciones->idtrasnportador = $request->idtransportador;
     
         // Guardar el registro en la base de datos
         $programaciones->save();

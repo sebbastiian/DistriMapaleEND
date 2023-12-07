@@ -6,6 +6,7 @@
     <title>DistriMapale</title>
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/styleTablas.css">
+    <link rel="stylesheet" href="/css/formCrear.css">
 </head>
 <body>
     <div class="menu">
@@ -133,41 +134,45 @@
             </div>
         </div>
         <div class="color">
-            <form action="{{ route('programaciones.update', $programaciones) }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
-                    <div>
-                        <label>Fecha:</label>
-                        <input type="date" name="fecha" id="fecha" value="{{$programaciones->fecha}}" readonly>
+            <div class="container">
+                <form action="{{ route('programaciones.update', $programaciones) }}" method="POST" enctype="multipart/form-data" class="form-container">
+                    @csrf
+                    @method('PUT')
+                    <div class="mt-4">
+                        <label for="fecha" class="block font-bold mb-2">Fecha:</label>
+                        <input type="date" name="fecha" id="fecha" value="{{ $programaciones->fecha }}" readonly class="block w-full p-2 border border-gray-300 rounded-md">
                     </div>
-                    <div>
-                        <label for="vehiculo">Vehiculos:</label>
-                        <select class="form-control" name="vehiculo" id="vehiculo" aria-label="Default select example" disabled>
+            
+                    <div class="mt-4">
+                        <label for="vehiculo" class="block font-bold mb-2">Vehículos:</label>
+                        <select class="block w-full p-2 border border-gray-300 rounded-md" name="vehiculo" id="vehiculo" aria-label="Default select example" disabled>
                             @forelse ($vehiculos as $vehiculo)
-                            <option value="{{ $vehiculo->idvehiculo }}"  {{ $vehiculo->idvehiculo == $programaciones->idvehiculo ? 'selected' : '' }}>{{ $vehiculo->nombre }} </option>
+                                <option value="{{ $vehiculo->idvehiculo }}" {{ $vehiculo->idvehiculo == $programaciones->idvehiculo ? 'selected' : '' }}>{{ $vehiculo->nombre }}</option>
                             @empty
                             @endforelse
                         </select>
                     </div>
-
-                    <div>
-                        <label for="trasnportadores">Transportadores</label>
-                        <select class="form-control" name="trasnportadores" id="trasnportadores" aria-label="Default select example" disabled>
+            
+                    <div class="mt-4">
+                        <label for="trasnportadores" class="block font-bold mb-2">Transportadores:</label>
+                        <select class="block w-full p-2 border border-gray-300 rounded-md" name="trasnportadores" id="trasnportadores" aria-label="Default select example" disabled>
                             @forelse ($users as $user)
-                            <option value="{{ $user->id }}"  {{ $user->id == $programaciones->idtrasnportadores ? 'selected' : '' }}>{{ $user->nombrecompleto }} </option>
+                                <option value="{{ $user->id }}" {{ $user->id == $programaciones->idtrasnportadores ? 'selected' : '' }}>{{ $user->nombrecompleto }}</option>
                             @empty
                             @endforelse
                         </select>
                     </div>
-
-                    <div>
-                        <label>Observaciones:</label>
-                        <input type="text" name="observaciones" id="observaciones" value="{{$programaciones->observaciones}}">
+            
+                    <div class="mt-4">
+                        <label for="observaciones" class="block font-bold mb-2">Observaciones:</label>
+                        <input type="text" name="observaciones" id="observaciones" value="{{ $programaciones->observaciones }}" class="block w-full p-2 border border-gray-300 rounded-md">
                     </div>
-
-                    <button type="submit">Actualizar</button>
-
-            </form>
+            
+                    <div class="form-group mt-4">
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Actualizar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 

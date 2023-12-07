@@ -6,6 +6,7 @@
     <title>DistriMapale</title>
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/styleTablas.css">
+    <link rel="stylesheet" href="/css/formCrear.css">
 </head>
 <body>
     <div class="menu">
@@ -135,50 +136,40 @@
                 <div class="titulof">
                     <h2>Datos de registro</h2>
                 </div>
-                @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-
-        @if(session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
-        <form action="{{ route('programaciones.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div>
-                <label for="idvehiculo">Vehiculo</label>
-                <select name="idvehiculo" id="idvehiculo" class="form-control">
-                    @foreach($vehiculos as $vehiculo)
-                        <option value="{{ $vehiculo->idvehiculo }}">{{ $vehiculo->nombre }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div>
-                <label for="id">Transportador</label>
-                <select name="id" id="id" class="form-control">
-                    @foreach($users as $user)
-                        <option value="{{ $user->id }}">{{ $user->nombrecompleto }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div>
-                <label for="fecha">Fecha</label>
-                <input type="date" name="fecha" id="fecha">
-            </div>
-
-            <div>
-                <label for="observaciones">Observaciones</label>
-                <input type="text" name="observaciones" id="observaciones">
-            </div>
-
-            <button type="submit">Guardar</button>
-        </form>
-
+                <form action="{{ route('programaciones.store') }}" method="POST" enctype="multipart/form-data" class="form-container">
+                    @csrf
+                    <div class="mt-4">
+                        <label for="idvehiculo" class="block font-bold mb-2">Vehiculo</label>
+                        <select name="idvehiculo" id="idvehiculo" class="block w-full p-2 border border-gray-300 rounded-md">
+                            @foreach($vehiculos as $vehiculo)
+                                <option value="{{ $vehiculo->idvehiculo }}">{{ $vehiculo->nombre }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+            
+                    <div class="mt-4">
+                        <label for="idtransportador" class="block font-bold mb-2">Transportador</label>
+                        <select name="idtransportador" id="idtransportador" class="block w-full p-2 border border-gray-300 rounded-md">
+                            @foreach($users as $user)
+                                <option value="{{ $user->id }}">{{ $user->nombrecompleto }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+            
+                    <div class="mt-4">
+                        <label for="fecha" class="block font-bold mb-2">Fecha</label>
+                        <input type="date" name="fecha" id="fecha" class="block w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+            
+                    <div class="mt-4">
+                        <label for="observaciones" class="block font-bold mb-2">Observaciones</label>
+                        <input type="text" name="observaciones" id="observaciones" class="block w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+            
+                    <div class="form-group mt-4" id="crear">
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Guardar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
