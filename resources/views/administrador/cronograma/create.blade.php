@@ -65,7 +65,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{-- {{route('administrador.pedidos')}} --}}">
+                    <a href="{{route('administrador.pedidos')}}">
                         <ion-icon name="bag-add-outline"></ion-icon>
                         <span>Pedidos</span>
                     </a>

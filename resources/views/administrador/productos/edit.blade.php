@@ -6,6 +6,7 @@
     <title>DistriMapale</title>
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/styleTablas.css">
+    <link rel="stylesheet" href="/css/formCrear.css">
 </head>
 <body>
     <div class="menu">
@@ -63,7 +64,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{-- {{route('administrador.pedidos')}} --}}">
+                    <a href="{{route('administrador.pedidos')}}">
                         <ion-icon name="bag-add-outline"></ion-icon>
                         <span>Pedidos</span>
                     </a>
@@ -133,64 +134,70 @@
             </div>
         </div>
         <div class="color">
-            <form action="{{ route('productos.update', $productos) }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @method('GET')
-                    <div>
-                        <label for="marca">Marca</label>
-                            <select class="form-control" name="idmarca" id="idmarca" aria-label="Default select example">
-                                @forelse ($marcas as $marca)
-                                <option value="{{ $marca->idmarca }}"  {{ $marca->idmarca == $productos->idmarca ? 'selected' : '' }}>{{ $marca->nombre }} </option>
-                                @empty
-                                @endforelse
-                            </select>
-                    </div>
-
-                    <div>
-                        <label for="tipos">Tipo</label>
-                        <select class="form-control" name="idmarca" id="idmarca" aria-label="Default select example">
-                            @forelse ($tipos as $tipo)
-                            <option value="{{ $tipo->idtipo }}"  {{ $tipo->idtipo == $productos->idtipo ? 'selected' : '' }}>{{ $tipo->nombre }} </option>
+            <div class="container">
+                <form action="{{ route('productos.update', $productos) }}" method="POST" enctype="multipart/form-data" class="form-container">
+                    @csrf
+                    @method('GET')
+            
+                    <div class="mt-4">
+                        <label for="idmarca">Marca</label>
+                        <select name="idmarca" id="idmarca" class="block mt-1 w-full">
+                            @forelse ($marcas as $marca)
+                                <option value="{{ $marca->idmarca }}" {{ $marca->idmarca == $productos->idmarca ? 'selected' : '' }}>
+                                    {{ $marca->nombre }}
+                                </option>
                             @empty
                             @endforelse
                         </select>
                     </div>
-
-                    <div>
-                        <label>Detalle:</label>
-                        <input type="text" name="descripcion" id="descripcion" value="{{$productos->descripcion}}">
+            
+                    <div class="mt-4">
+                        <label for="idtipo">Tipo</label>
+                        <select name="idtipo" id="idtipo" class="block mt-1 w-full">
+                            @forelse ($tipos as $tipo)
+                                <option value="{{ $tipo->idtipo }}" {{ $tipo->idtipo == $productos->idtipo ? 'selected' : '' }}>
+                                    {{ $tipo->nombre }}
+                                </option>
+                            @empty
+                            @endforelse
+                        </select>
                     </div>
-
-                    <div>
-                        <label>Cantidad:</label>
-                        <input type="number" name="cantidad" id="cantidad" value="{{$productos->cantidad}}">
+            
+                    <div class="mt-4">
+                        <label for="descripcion">Detalle:</label>
+                        <input type="text" name="descripcion" id="descripcion" value="{{ $productos->descripcion }}" class="block mt-1 w-full">
                     </div>
-
-                    <div>
-                        <label>Contenido Neto:</label>
-                        <input type="text" name="contneto" id="contneto" value="{{$productos->contneto}}">
+            
+                    <div class="mt-4">
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" name="cantidad" id="cantidad" value="{{ $productos->cantidad }}" class="block mt-1 w-full">
                     </div>
-
-                    <div>
-                        <label>Unidad por Empaque:</label>
-                        <input type="text" name="unidadxempaque" id="unidadxempaque" value="{{$productos->unidadxempaque}}">
+            
+                    <div class="mt-4">
+                        <label for="contneto">Contenido Neto:</label>
+                        <input type="text" name="contneto" id="contneto" value="{{ $productos->contneto }}" class="block mt-1 w-full">
                     </div>
-
-                    <div>
-                        <label>Estado:</label>
-                        <input type="text" name="disponibilidad" id="disponibilidad" value="{{$productos->disponibilidad}}">
+            
+                    <div class="mt-4">
+                        <label for="unidadxempaque">Unidad por Empaque:</label>
+                        <input type="text" name="unidadxempaque" id="unidadxempaque" value="{{ $productos->unidadxempaque }}" class="block mt-1 w-full">
                     </div>
-
-                    <div>
-                        <label>Valor:</label>
-                        <input type="text" name="valor" id="valor" value="{{$productos->valor}}">
+            
+                    <div class="mt-4">
+                        <label for="disponibilidad">Estado:</label>
+                        <input type="text" name="disponibilidad" id="disponibilidad" value="{{ $productos->disponibilidad }}" class="block mt-1 w-full">
                     </div>
-                    {{-- <div>
-                        <label for="imagen">Imagen del producto</label>
-                        <input type="file" name="imagen" id="imagen">
-                    </div> --}}
-                    <button type="submit">Actualizar</button>
-            </form>
+            
+                    <div class="mt-4">
+                        <label for="valor">Valor:</label>
+                        <input type="text" name="valor" id="valor" value="{{ $productos->valor }}" class="block mt-1 w-full">
+                    </div>
+            
+                    <div class="mt-4">
+                        <button type="submit">Actualizar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 
