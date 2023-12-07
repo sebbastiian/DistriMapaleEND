@@ -72,7 +72,7 @@ class PrettyPageHandler extends Handler
     /**
      * @var string
      */
-    private $pageTitle = "Whoops! There was an error.";
+    private $pageTitle = "¡Ups! Algo salió mal.";
 
     /**
      * @var array[]
